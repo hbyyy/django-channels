@@ -1,3 +1,59 @@
+{#<!doctype html>#}
+{#<html lang="ko">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport"#}
+{#          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">#}
+{#    <meta http-equiv="X-UA-Compatible" content="ie=edge">#}
+{#    <title>Document</title>#}
+{#</head>#}
+{#<body>#}
+{#<h1>Room (name: {{ room_name }})</h1>#}
+{#<textarea name="" id="log" cols="100" rows="20"></textarea>#}
+{#<input type="text" id="input" size="100"><br>#}
+{#<button id="send">Send</button>#}
+{#{{ room_name|json_script:"room-name" }}#}
+{#</body>#}
+{##}
+{#<script>#}
+{#    const roomName = JSON.parse(document.getElementById('room-name').textContent);#}
+{##}
+{#    const chatSocket = new WebSocket(#}
+{#        'ws://'#}
+{#        + window.location.host#}
+{#        + '/ws/'#}
+{#        + roomName#}
+{#        + '/'#}
+{#    );#}
+{##}
+{#    chatSocket.onmessage = function (e) {#}
+{#        const data = JSON.parse(e.data);#}
+{#        document.querySelector('#log').value += (data.message + '\n');#}
+{#    };#}
+{##}
+{#    chatSocket.onclose = function(e) {#}
+{#            console.error('Chat socket closed unexpectedly');#}
+{#        };#}
+{##}
+{#    document.querySelector('#input').focus();#}
+{#    document.querySelector('#input').onkeyup = function(e) {#}
+{#        if (e.keyCode === 13) {  // enter, return#}
+{#            document.querySelector('#send').click();#}
+{#        }#}
+{#    };#}
+{##}
+{#    document.querySelector('#send').onclick = function(e) {#}
+{#            const messageInputDom = document.querySelector('#input');#}
+{#            const message = messageInputDom.value;#}
+{#            chatSocket.send(JSON.stringify({#}
+{#                'message': message#}
+{#            }));#}
+{#            messageInputDom.value = '';#}
+{#        };#}
+{##}
+{#</script>#}
+{#</html>#}
+
 <!doctype html>
 <html lang="ko">
 <head>
@@ -8,9 +64,41 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Room (name: {{ room_name }})</h1>
-    <textarea name="" id="log" cols="100" rows="20"></textarea>
-    <input type="text" id="input" size="100"><br>
-    <button id="btn">Send</button>
+<h1>Room (name: {{ room_name }})</h1>
+<textarea name="" id="log" cols="100" rows="20"> </textarea><br>
+<input type="text" id="input" size="100"><br>
+<button id="send">Send</button>
+{{ room_name|json_script:"room-name" }}
+<script>
+    const roomName = JSON.parse(document.getElementById('room-name').textContent);
+    const chatSocket = new WebSocket(
+        'ws://'
+        + window.location.host
+        + '/ws/'
+        + roomName
+        + '/'
+    );
+    chatSocket.onmessage = function (e) {
+        const data = JSON.parse(e.data);
+        document.querySelector('#log').value += (data.message + '\n');
+    };
+    chatSocket.onclose = function (e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+    document.querySelector('#input').focus();
+    document.querySelector('#input').onkeyup = function (e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#send').click();
+        }
+    };
+    document.querySelector('#send').onclick = function (e) {
+        const messageInputDom = document.querySelector('#input');
+        const message = messageInputDom.value;
+        chatSocket.send(JSON.stringify({
+            'message': message
+        }));
+        messageInputDom.value = '';
+    };
+</script>
 </body>
 </html>
