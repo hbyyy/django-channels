@@ -19,7 +19,7 @@ SECRET_KEY = 'ms)$!whzyniha=v$i5+$yi(9hq@ux*%jmw!aqi&fy$q*4&%-(%'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+ASGI_APPLICATION = 'config.routing.application'
 
 # Application definition
 
@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
 ]
 
 MIDDLEWARE = [
