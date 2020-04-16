@@ -8,18 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Lobby</h1>
-
-<input type="text" id="room-name">
-<button id="btn">Go</button>
-<script>
-    document.querySelector('#room-name').focus();
-    document.querySelector('#room-name').onkeyup = function (e) {
-        if (e.KeyCode === 13) {
-            document.querySelector('#submit').click();
-        }
-
-    }
-</script>
+    <h1>Room (name: {{ room_name }})</h1>
+    <textarea name="" id="log" cols="100" rows="20"></textarea>
+    <input type="text" id="input" size="100"><br>
+    <button id="btn">Send</button>
 </body>
 </html>
