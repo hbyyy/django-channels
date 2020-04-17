@@ -20,11 +20,12 @@ from members.views import index, hello
 
 urlpatterns_api = [
     path('members/', include('members.urls')),
-    path('', include('chat.urls')),
+    path('auth/', include('rest_framework_social_oauth2.urls')),
 ]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('chat.urls')),
     path('oauth/', index, name='index'),
     path('test/', hello, name='hello'),
     path('api/', include(urlpatterns_api)),
