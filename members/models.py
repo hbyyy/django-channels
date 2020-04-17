@@ -31,7 +31,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    object = UserManager()
+    objects = UserManager()
 
     username = models.CharField('아이디', max_length=128, unique=True)
     email = models.EmailField('이메일', max_length=256, unique=True)
