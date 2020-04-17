@@ -1,6 +1,7 @@
 reated by https://www.gitignore.io/api/git,venv,linux,macos,django,python,windows,virtualenv,pycharm+all,jupyternotebooks,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=git,venv,linux,macos,django,python,windows,virtualenv,pycharm+all,jupyternotebooks,visualstudiocode
 /.idea
+/secrets.json
 
 
 ### Django ###

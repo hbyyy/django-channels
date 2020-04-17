@@ -29,5 +29,6 @@ def hello(request):
     )
     print(request_url)
     response = requests.get(request_url)
-    print(response.text)
+    print(response.json())
+    print(type(response.json()))
     return render(request, 'members/hello.html', context={'response': response.text})
