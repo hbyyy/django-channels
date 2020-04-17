@@ -11,6 +11,8 @@ django-extensions = "^2.2.9"
 channels = "^2.4.0"
 djangorestframework = "^3.11.0"
 django-sslserver = "^0.22"
+django-rest-framework-social-oauth2 = "^1.1.0"
+requests = "^2.23.0"
 
 [tool.poetry.dev-dependencies]
 
