@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'members',
     'django_extensions',
     'rest_framework',
+    'sslserver',
 ]
 
 MIDDLEWARE = [

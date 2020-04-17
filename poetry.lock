@@ -164,6 +164,17 @@ six = ">=1.2"
 
 [[package]]
 category = "main"
+description = "An SSL-enabled development server for Django"
+name = "django-sslserver"
+optional = false
+python-versions = "*"
+version = "0.22"
+
+[package.dependencies]
+Django = ">=1.8"
+
+[[package]]
+category = "main"
 description = "Web APIs for Django, made easy."
 name = "djangorestframework"
 optional = false
@@ -369,7 +380,7 @@ test = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 
 [metadata]
-content-hash = "3752882cfc15aea3c29be0698fe394fdab34d462e3bc2ce07f7ebe2c17d7a2a7"
+content-hash = "730a1a821e49eab8b4aeb0a3868f823e53e4ba1b3d47623e17ea6c258941d252"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -459,6 +470,9 @@ django = [
 django-extensions = [
     {file = "django-extensions-2.2.9.tar.gz", hash = "sha256:2f81b618ba4d1b0e58603e25012e5c74f88a4b706e0022a3b21f24f0322a6ce6"},
     {file = "django_extensions-2.2.9-py2.py3-none-any.whl", hash = "sha256:b19182d101a441fe001c5753553a901e2ef3ff60e8fbbe38881eb4a61fdd17c4"},
+]
+django-sslserver = [
+    {file = "django_sslserver-0.22-py3-none-any.whl", hash = "sha256:c598a363d2ccdc2421c08ddb3d8b0973f80e8e47a3a5b74e4a2896f21c2947c5"},
 ]
 djangorestframework = [
     {file = "djangorestframework-3.11.0-py3-none-any.whl", hash = "sha256:05809fc66e1c997fd9a32ea5730d9f4ba28b109b9da71fccfa5ff241201fd0a4"},

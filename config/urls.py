@@ -16,8 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from members.views import index
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('oauth/', index, name='index'),
+]
+
+urlpatterns_api = [
     path('members/', include('members.urls')),
     path('', include('chat.urls')),
 ]
+
+urlpatterns += urlpatterns_api

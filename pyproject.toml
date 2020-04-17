@@ -10,6 +10,7 @@ django = "<3.0"
 django-extensions = "^2.2.9"
 channels = "^2.4.0"
 djangorestframework = "^3.11.0"
+django-sslserver = "^0.22"
 
 [tool.poetry.dev-dependencies]
 
