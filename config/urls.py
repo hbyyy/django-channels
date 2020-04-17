@@ -18,15 +18,14 @@ from django.urls import path, include
 
 from members.views import index, hello
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('oauth/', index, name='index'),
-    path('test/', hello, name='hello')
-]
-
 urlpatterns_api = [
     path('members/', include('members.urls')),
     path('', include('chat.urls')),
 ]
 
-urlpatterns += urlpatterns_api
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('oauth/', index, name='index'),
+    path('test/', hello, name='hello'),
+    path('api/', include(urlpatterns_api)),
+]
