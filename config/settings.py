@@ -28,6 +28,8 @@ CHANNEL_LAYERS = {
         },
     },
 }
+AUTH_USER_MODEL = 'members.User'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'channels',
     'chat',
+    'members',
     'django_extensions',
 ]
 
