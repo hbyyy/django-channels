@@ -4,10 +4,7 @@
     <list default="true" id="03dafac6-5815-4502-ba4e-e32104db8372" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3_oauth" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3_oauth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/members/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/members/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,6 +90,8 @@
       <workItem from="1587032996410" duration="7145000" />
       <workItem from="1587052898595" duration="16000" />
       <workItem from="1587101095371" duration="17424000" />
+      <workItem from="1587143091656" duration="42000" />
+      <workItem from="1587182994763" duration="1389000" />
     </task>
     <servers />
   </component>
